@@ -1,19 +1,15 @@
-# 자료형과 문자열
-# 1. 문자열 (string) : "abcd"...
-# 2. 숫자 (number) : 1, 2, 3,...
-# 3. 불 (boolean) : True, False
+# Ch1 파이썬 시작
+# Programming : 프로그램을 만드는 것
+# Program : 미리 작성된 것
+# Computer program : 컴퓨터가 해야할 일을 미리 기술한 것
 
-print(type(273.0)) # float
-print(type(273)) # int
-print(type("hello")) # str
+# binary digit (이진 숫자) : 0 & 1로 이루어진 컴퓨터의 언어
+# (Ex) 16 bit... 
 
-# "" 넣기 : ''&"" 동시 사용 또는 아래와 같이 사용
-print("\"h\"ello") # "h"ello
+# Source code : 프로그래밍 언어로 작성한 프로그램으로 기계가 이해할 수 있게 만듦
 
-# \n : 줄바꿈
-# \t : tab 추가
-# "" + "" : 문자열 연결 (같은 타입끼리)
-# "" * int : 문자열 반복
+# Python
+# Compiler vs Interpreter
+# Compiler : 전체 번역 / 실행 파일 생성 / Non-interactive / 개발 시간 길다 / 프로그램 실행시간 빠름
+# Interpreter : 실시간, script file (=src file) / Interactive / 개발 시간 짧음 / 상대적 실행시간 느림
 
-# [] 인덱싱 / [:] 슬라이싱
-# len() : 문자열의 길이 반환
