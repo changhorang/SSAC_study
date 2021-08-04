@@ -131,5 +131,53 @@ PricePerApple = 20
 
 # 리터럴(Literal)
 #  - 소스 코드에 새긴 값
-#  - 변하지 않아요
+#  - 불변하는 값
 
+# 함수
+#  - function: action, behavior
+#  - 함수: 상자 함  → 블랙박스 : len()
+#  - (관련 있는) 문장을 묶어서 이름 붙인 것
+#  - 코드 블록: 문장의 묶음
+#  - 함수의 입출력 정의/선언 → 함수의 인터페이스, 함수의 헤더
+#  - 함수의 인터페이스: 
+#      1) 함수 이름 
+#      2) 함수의 매개변수(parameter)  
+#      3) 함수의 반환값(return value) 또는 반환값이 없는 대신 기능 수행
+
+
+# 이름을 붙인다는 것
+#  - call (호출) = 사용 → 재사용(Reusability)
+#  - 이름을 붙이지 않은 것 → 한 번만 사용하겠다
+#  - 예) 변수, 함수, 클래스 
+
+#실습코드
+print("Hello \n")
+print("줄바꿈")
+print() # end 기본 값: \n 
+print("hello", end ='')
+print("붙이기")
+
+# 하나만 출력
+print("# 하나만 출력")
+print("Hello Python \nProgramming..!")
+print()
+
+# 여러개 출력
+print("# 여러개 출력")
+print(10, 20, 30, 40, 50)
+print("Hi", "my", "name", "is", "...\n")
+
+# 아무것도 입력하지 않는 경우 줄바꿈
+print("# 아무것도 출력 안함")
+print("--확인 전용선--\n")
+print()
+print("--확인전용선--")
+
+# Snake case vs Pascal case
+#hello_coding / HelloCoding
+#hello_python / HelloPython
+#we_are_the_world / WeAreTheWorld
+#create_output / CreateOutput
+#create_request / CreateRequest
+#init_server / InitServer
+#init_matrix / InitMatrix
