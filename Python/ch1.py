@@ -145,6 +145,28 @@ PricePerApple = 20
 #      3) 함수의 반환값(return value) 또는 반환값이 없는 대신 기능 수행
 
 
+# 매개변수(Parameters) vs. 인자(Arguments)
+#  - 함수 입장: 매개변수
+#  - 함수 호출하는 입장: 인자
+#  - 매개변수는 함수의 로컬 변수로 동작
+#  - 인자는 호출하는 쪽에서 넘겨주는 값
+#    (리터럴, 변수, 함수의 리턴값, 객체, 함수이름 등)
+
+
+# 중첩 함수(Nested Function)
+#  - 함수의 인자로 함수가 오는 경우
+
+# 중첩(Nested)
+#  - 제일 안쪽의 구조를 먼저 처리!
+l1 = [1,2,3]
+print(len(l1))
+
+info = '20210804cloudy'
+def sum(a,b):
+    return a+b
+print(sum(len(l1), int(info[:4])))
+
+
 # 이름을 붙인다는 것
 #  - call (호출) = 사용 → 재사용(Reusability)
 #  - 이름을 붙이지 않은 것 → 한 번만 사용하겠다
