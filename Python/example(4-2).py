@@ -1,3 +1,4 @@
+# p.173 연습문제
 dict_a = {}
 print(dict_a)
 

@@ -209,6 +209,16 @@ array = [6,7,8,9,10]
 for i in range(len(array)):
     print("{} 번째 반복, {}".format(i, array[i]))
 
+# * for
+#  - 반복 횟수를 알고 있을 때
+
+# * while
+#  - 반복의 종료가 실행 중에 결정될 때
+#  - 반복하다가 특정 조건을 만족하지 않으면 반복 종료
+#    (특정 조건을 만족하면 반복)
+#  - 조건식 필요: 불, 비교식
+
+
 # 반대로 반복
 print("\n역반복문")
 for i in reversed(range(5)):
@@ -257,15 +267,19 @@ for number in numbers:
         continue
     print(number)
 
-# 리스트에 적용할 수 있는 기본 함수 : min(), max(), sum()
+# 리스트에 적용할 수 있는 기본 내장 함수 : min(), max(), sum()
 print("\nmin(), max(), sum()")
 num = [103, 52, 273, 32, 77]
 min(num) # 32
 max(num) # 273
 sum(num) # 537
 
+# reversed() 함수의 반환 객체
+#  - 이터레이터: 제너레이터의 일종
+#  - 순회하면서 값을 소진함 (필요한 시점에 사용)
 print("\nreversed()")
 num_reversed = reversed(num) # [77, 32, 273, 52, 103]
+num2 = num[::-1] # [77, 32, 273, 52, 103]
 
 # enunerate() : list의 요소 반복시 인덱스가 몇 번째인지 확인 가능, for와 조합해 사용
 print("\nenunerate()")
@@ -284,10 +298,33 @@ example_dictionary = {
 for key, element in example_dictionary.items():
     print("dict_[{}] : {}".format(key, element))
 
-#리스트 내포
+# 리스트 내포 (list comprehension)
+#  - 리스트 리터럴 구문 안에 for 문이 포함
+#  - 반복문에서 list.append()를 사용하는 방법보다 속도가 빠르다
 print("\nlist 내포")
-array1 = [i*i for i in range(0, 20, 2)]
+array1 = [i**2 for i in range(0, 20, 2)]
 print(array1)
 
-array2 = [i*i for i in range(0, 20, 2) if i != 0]
+array2 = [i**2 for i in range(0, 20, 2) if i != 0]
 print(array2)
+
+print("\n반복문과 리스트 내포간의 속도 차이 test")
+import time
+
+l1 = range(10000000)
+
+start_time = time.time()
+l2 = []
+for value in l1:
+    l2.append(value**2)
+end_time = time.time()
+print("클래식 방법: 요소 개수 = {}".format(len(l2)))
+print("소요 시간 : {}".format((end_time - start_time)))
+
+
+
+start_time = time.time()
+l3 = [value ** 2 for value in l1]
+end_time = time.time()
+print("클래식 방법: 요소 개수 = {}".format(len(l3)))
+print("소요 시간 : {}".format((end_time - start_time)))
