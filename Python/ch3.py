@@ -36,7 +36,8 @@ if now.hour < 12:
 if now.hour >= 12:
     print("현재 시각은 {}시로 오후 입니다".format(now.hour))
 
-# if~else와 elif 구문
+# if~else와 elif 구문 (elif는 원하는 만큼 사용 가능 / else는 if 구문에 마지막에 위치)
+# * if의 다음 문장은 else가 아니라 if 구문이 끝난 다음을 의미함
 print("\nif~else와 elif 구문")
 number = int(input("정수>"))
 
@@ -57,6 +58,7 @@ else:
     print("winter")
 
 # False로 변환되는 값 (Truth Value Testing)
+#  - https://docs.python.org/3/library/stdtypes.html
 #  - 값만으로 True, False를 결정하는 것
 
 #  - False로 테스팅되는 것

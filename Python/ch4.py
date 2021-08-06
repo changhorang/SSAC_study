@@ -79,8 +79,19 @@ for chracter in "hello":
     print("-", chracter)
 
 # Dictionary & 반복문
-# list : index 기반으로 값을 저장 / dictionary : key를 기반으로 값을 저장
+#  - Mapping 자료형 → (K, V) Key, Value Pair
+#  - list : index 기반으로 값을 저장 / dictionary : key를 기반으로 값을 저장 (순서 없이)
+#  - Key는 유일해야 하는데 같은 키로 값을 추가하면 해당 키 값이 대체됨
+#  - Key immutable 자료형만 가능 (불변하는 값)
+#     : 숫자형, 문자열, 불, 튜플
+
 print("\nDictionary")
+# 빈 dictionary 선언 방법
+d1 = {}
+d1 = dict()
+
+# 딕셔너리의 키로 변수 사용 가능
+#  - 단, 변수는 immutable(불변) 데이터를 바인딩해야 함
 
 dict_a = {
     "key1" : ["value1", "value2", "value3"],
@@ -105,12 +116,76 @@ else:
     print("non-existing key")
 
 # get()
+#  1) 딕셔너리의 요소의 값에 접근 용도
+#     : dict[‘key’]와 동일하나 해당 key가 없을 때 예외를 발생시키는 대신 None을 반환 
+#  2) 딕셔너리에 없는 키로 접근했을때 디폴트 값 반환
+
 print("\nget()")
 value = dict_a.get("non-existing key")
 print("값: ", value)
 
 if value == None:
     print("존재 안하는 키에 접근") # Keyerror 발생시키지 않고 None 출력
+print()
+
+score_dict = {}
+
+for i in range(10):
+    score = input('학점(A, B 등)을 입력하세요> ')
+    score_dict[score] = score_dict.get(score, 0) + 1
+print(score_dict)
+
+# 반복문에서 딕셔너리의 키와 값에 접근하는 다양한 방법
+#  1) 키를 순회
+#  2) 값을 순회
+#  3) (키, 값) 쌍 순회
+
+d = {
+    'name': '홍길동',
+    'job': '의적',
+    'father': '홍판서',
+    'age': 20
+}
+
+# dict.keys() 메서드
+print(d.keys())
+print(type(d.keys()))
+
+for key in d:
+    print('키: {}'.format(key))
+
+print()
+for key in d.keys():
+    print('키: {}'.format(key))
+
+print()
+# dict.values() 메서드
+print(d.values())
+print(type(d.values()))
+
+for value in d.values():
+    print('값: {}'.format(value))
+
+# dict.items() 메서드: (키, 값) 튜플을 반환
+print()
+print(d.items())
+print(type(d.items()))
+
+for item in d.items():   # (키, 값) 쌍을 한 묶음으로 바인딩
+    print(item[0], ':', item[1])
+    # print(key, ":", dictionary[key])  --> 교재(p.170)에서 사용한 문장
+
+print()
+
+for (key, value) in d.items():   # (키, 값) 쌍을 개별적으로 바인딩
+    print(key, ':', value)
+
+# 동등 연산자: is vs. ==
+#  - "is" 연산자: 변수에 저장된 주소가 같은 비교
+#                 동일한 객체를 바인딩하는지 비교
+#  - "==" 연산자: 값이 같은지 비교
+#                 주소가 다른 객체라도 값이 같으면 True
+
 
 # for 반복문
 print("\nfor 반복문")
