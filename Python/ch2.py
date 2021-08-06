@@ -182,8 +182,12 @@ y = "hello"
 x, y = y, x
 
 
-# 문자열의 format() 함수 : str type으로 변환
+# 문자열의 format() 메서드 : str type으로 변환
 # format 외의 방식 (%d : 정수, %s : string)
+
+#  - 문자열 내에 {}를 이용하여 출력할 내용의 위치와 형식을 표현
+#  - IndexError 발생: {}의 개수보다 출력 인자의 개수가 적을 때
+
 print('price is %d, and name is %s' % (100, 'hello'))
 
 string_c = "{}".format(10)
@@ -194,8 +198,49 @@ print(type(string_c))
 format_d = "{} {} {}".format(1, "문자열", True)
 print(format_d)
 
-format_e = "hello {:5d}".format(10)
-print(format_e)
+# leading zeroes, trailing zeroes
+# leading spaces, trailing spaces
+# d : decimal  / f : float / 자릿수 초과시 소수점은 반올림, 정수 부분은 그대로 다 표현
+format_e1 = "hello {:5d}".format(10)
+print(format_e1)
+format_e2 = "hello {:5f}".format(10.512345)
+print(format_e2)
+format_e3 = "hello {:5.3f}".format(10.512345)
+print(format_e3)
+format_e4 = "hello {:.3f}".format(10.512345)
+print(format_e4)
+
+# {} 설명 추가 / 인자 재사용
+#  위치 지정과 이름 지정의 차이 : 이름 지정 방식은 인자의 순서를 무시할 수 있음
+# 위치 지정 방식과 이름 지정 방식의 혼용 
+#  - format 메서드의 인자로 위치 지정 방식의 인자를 반드시 먼저 다 기술한 후
+#    이름 지정 방식의 인자를 나열한다.
+print('{1} {name} {0} {job}'.format(10, 20, job='a', name='n'))
+
+
+#  1) 위치 지정
+#  - {position} : 인자의 위치값(정수)
+print('{1}은(는) {0}보다 강하다. {1}'.format('펜', '칼'))
+#  2) 이름 지정
+#  - {identifier}: 인자의 이름
+print('이름 : {name} \n직업 :{job} \n닉네임 : {name}'.format(name = "Hi", job = "Hello"))
+
+# f-string (Formatted String Literal) : Python 3.6 NF
+#  - 문자열의 format 메서드를 쓰지 않고 formatting 할 수 있음
+#  - 대신 이름 지정 방식으로만 사용할 수 있고 변수가 필요하다.
+#  - 형식: 문자열을 왼쪽에 f 추가
+#  - 변수를 통해서 출력할 내용을 간접적으로 전달
+obj1 = "펜"
+obj2 = "칼"
+print(f'{obj1}은(는) {obj2}보다 강하다.')
+
+# 정렬(Alignment)
+#  - <, >, ^ : 좌측, 우측, 가운데 정렬
+#  - 숫자는 기본적으로 우측정렬
+#  - 그외 객체는 좌측정렬
+#  ex)
+#  >>> '이름: {:10}, 사번: {:10}'.format('홍길동', 1234) 
+
 
 # 대소문자 바꾸기 : upper(), lower()
 f = "hello"
@@ -203,7 +248,10 @@ g = f.upper()
 print(g)
 print(g.lower())
 
-# 문자열 공백 제거하기 : strip()
+# strip(), lstrip(), rstrip() 메서드
+#  - 인자가 없으면: Whitespace(space, tab, 줄바꿈 등) 제거
+#  - 인자를 문자열로 받으면: 해당 문자열을 구성하는 문자들을 제거
+
 input_a = """
    Hi   """
 print(input_a)
@@ -220,3 +268,12 @@ a = "10 20 30 40".split(" ")
 b = "10/20/30/40".split("/")
 print(a)
 print(b)
+
+# 실습 코드
+a = input("> 1번째 숫자: ")
+b = input("> 2번째 숫자: ")
+print("\n{} + {} = {}".format(a, b, int(a)+int(b)))
+
+string = "hello"
+print("A 지점: ", string)
+print("B 지점: ", string.upper())
