@@ -308,6 +308,20 @@ print(array1)
 array2 = [i**2 for i in range(0, 20, 2) if i != 0]
 print(array2)
 
+# List Comprehension 안에서 조건식
+#  [표현식 for 변수 in 데이터 if 조건식]
+
+# List Comprehension 안에서 조건식을 만족하지 않는 경우도 포함하고 싶을 때
+#   * 리스트 내포는 문법적으로는 if만 지원하지 if ~ else는 지원하지 않음
+#   * 대신 삼항 연산자를 이용하여 해결
+#   ex) 홀수면 ‘홀’, 짝수면 ‘짝’으로 나타내는 리스트 생성
+
+l1 = list(range(10))
+print('# l1 = {}'.format(l1))
+
+l5 = ['홀' if v % 2 == 1 else '짝' for v in l1]
+print('# l5 = {}'.format(l5))
+
 print("\n반복문과 리스트 내포간의 속도 차이 test")
 import time
 
@@ -328,3 +342,11 @@ l3 = [value ** 2 for value in l1]
 end_time = time.time()
 print("클래식 방법: 요소 개수 = {}".format(len(l3)))
 print("소요 시간 : {}".format((end_time - start_time)))
+
+
+# Dictionary Comprehension
+#  * Syntax: {k:v for 변수 in 복합자료형}
+
+# Tuple Comprehension을 굳이 만든다면
+#  1) tuple(리스트 내포)
+#  2) tuple(Generator Expression)
