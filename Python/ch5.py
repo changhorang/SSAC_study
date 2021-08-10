@@ -147,9 +147,9 @@ def print_family_name(*parents, **sibling):
       print("아버지 :", parents[0])
       print("어머니 :", parents[1])
       if sibling:
-           print("호적 메이트..")
-           for title, name in sibling.items():
-                 print('{} : {}'.format(title, name))
+          print("호적 메이트..")
+          for title, name in sibling.items():
+              print('{} : {}'.format(title, name))
 print_family_name("홍길동", '심사임당', 누나='김태희', 여동생='윤아')
 
 #   * Unpacking
