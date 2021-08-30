@@ -1,0 +1,58 @@
+# AdaIN (Adaptive Instance Normalization)
+ : 빠른 속도로 추론 가능하면서 Arbitary하게 새로운 스타일을 적용할 수 있는 방식
+
+1. 같이 비교된 방식
+1) Gatys : 많은 스타일 적용 가능하지만, 속도가 굉장히 느림
+2) Feed-Forward 방식의 IN과 CIN : 빠른 속도의 추론이 가능하지만, 스타일이 한정적
+3) AdaIN : 빠른 속도의 추론이 가능하면서 동시에 무한한 스타일을 생성
+
+2. Encoder
+- VGG pre-trained 모델을 통해서 Encoding 수행
+- Encoder를 feature를 인코딩 할 때, 그리고 Loss Function 을 구할 때 사용.
+즉, Encoder는 학습 시키지 않음
+
+3. Decoder 
+- 네트워크 상에서 학습시키는 것은 Decoder뿐
+- AdaIN으로 생성된 Feature들이 Decoder를 통해서 Image space로 invert 하는 법을 학습
+
+- AdaIN 내에서는 learnable parameter가 없음
+
+4. AdaIN Layer
+- Style Transfer는 특정 이미지에서 Style을 뽑고, 다른 이미지에서 Contents를 뽑아서 이를 합성
+- feature space상의 평균과 분산이 style에 영향
+- 평균과 분산을 뽑아 즉석으로 교환해주는 방식을 택함
+- AdaIN(x, y)= sigma(y)*({x-mu(x)}/sigma(x))+mu(y)   -- sigma: 분산 / mu: 평균
+
+- Style transfer는 원하는 contents를 담고 있는 이미지의 feature x에서, 이미지의 style을 빼주고
+원하는 style을 더해주는 방식으로 수행
+- "({x-mu(x)}/sigma(x))"는 contents 이미지에서 Contents의 이미지의 스타일을 빼준 것임
+- "sigma(y)*({x-mu(x)}/sigma(x))+mu(y)"는 이미지 y의 스타일을 입힌 것임
+
+- feature t = AdaIN(f(c), f(s))
+- Decoder g : g(t) = T(c, s)
+- f = Encoder
+- T = Style Transfer Network (Encoder-AdaIN-Decoder)
+
+5. Archutecture Detail
+- check-board effect 감소를 위해 decoder의 pooling layer를 nearest up-sampling방식으로 교체
+- f, g에서 reflection padding을 사용
+
+6. Loss
+- Loss, L = L_c + lambda*L_s
+- content loss는 target feature와 output image의 feature의 유클리디안 거리를 구함
+- AdaIN output t를 content target으로 정함 (조금 더 빠른 convergence가 이루어짐)
+ 
+- Content Loss, L_c = || f(g(t)) - t ||_2 : t를 디코더에 넣고 다시 인코더에 넣은 후, t와 비교하는 것을
+ contents Loss로 삼는 간단한 식임
+
+- Style Loss, L_s = sum_i=1^L||mu(phi_i(g(t)))-mu(phi_i(s))||_2
+		+ sum_i=1^L||sigma(phi_i(g(t)))-sigma(phi_i(s))||_2
+
+
+
+Toward Controlled Generation of Text,
+Multiple-Attribute Text Style Transfer, 
+Contextual Text Style Transfer 
+
+image transfer를 text style로 적용한 거 없는지??
+adain이용?
