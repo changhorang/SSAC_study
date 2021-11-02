@@ -1,0 +1,284 @@
+{
+  "_index": "kibana_sample_data_ecommerce",
+  "_type": "_doc",
+  "_id": "emPz2XwBpj7Vbppf1MfR",
+  "_version": 1,
+  "_score": 1,
+  "_source": {
+    "category": [
+      "Women's Shoes"
+    ],
+    "currency": "EUR",
+    "customer_first_name": "Wilhemina St.",
+    "customer_full_name": "Wilhemina St. Padilla",
+    "customer_gender": "FEMALE",
+    "customer_id": 17,
+    "customer_last_name": "Padilla",
+    "customer_phone": "",
+    "day_of_week": "Tuesday",
+    "day_of_week_i": 1,
+    "email": "wilhemina st.@padilla-family.zzz",
+    "manufacturer": [
+      "Primemaster",
+      "Tigress Enterprises"
+    ],
+    "order_date": "2021-11-02T05:34:05+00:00",
+    "order_id": 566986,
+    "products": [
+      {
+        "base_price": 74.99,
+        "discount_percentage": 0,
+        "quantity": 1,
+        "manufacturer": "Primemaster",
+        "tax_amount": 0,
+        "product_id": 11438,
+        "category": "Women's Shoes",
+        "sku": "ZO0360903609",
+        "taxless_price": 74.99,
+        "unit_discount_amount": 0,
+        "min_price": 39.74,
+        "_id": "sold_product_566986_11438",
+        "discount_amount": 0,
+        "created_on": "2016-12-13T05:34:05+00:00",
+        "product_name": "High heeled sandals - Midnight Blue",
+        "price": 74.99,
+        "taxful_price": 74.99,
+        "base_unit_price": 74.99
+      },
+      {
+        "base_price": 32.99,
+        "discount_percentage": 0,
+        "quantity": 1,
+        "manufacturer": "Tigress Enterprises",
+        "tax_amount": 0,
+        "product_id": 5014,
+        "category": "Women's Shoes",
+        "sku": "ZO0030100301",
+        "taxless_price": 32.99,
+        "unit_discount_amount": 0,
+        "min_price": 15.18,
+        "_id": "sold_product_566986_5014",
+        "discount_amount": 0,
+        "created_on": "2016-12-13T05:34:05+00:00",
+        "product_name": "Boots - cognac",
+        "price": 32.99,
+        "taxful_price": 32.99,
+        "base_unit_price": 32.99
+      }
+    ],
+    "sku": [
+      "ZO0360903609",
+      "ZO0030100301"
+    ],
+    "taxful_total_price": 107.98,
+    "taxless_total_price": 107.98,
+    "total_quantity": 2,
+    "total_unique_products": 2,
+    "type": "order",
+    "user": "wilhemina",
+    "geoip": {
+      "country_iso_code": "MC",
+      "location": {
+        "lon": 7.4,
+        "lat": 43.7
+      },
+      "continent_name": "Europe",
+      "city_name": "Monte Carlo"
+    },
+    "event": {
+      "dataset": "sample_ecommerce"
+    }
+  },
+  "fields": {
+    "products.manufacturer": [
+      "Primemaster",
+      "Tigress Enterprises"
+    ],
+    "products.discount_amount": [
+      0,
+      0
+    ],
+    "products.base_unit_price": [
+      75,
+      33
+    ],
+    "type": [
+      "order"
+    ],
+    "products.discount_percentage": [
+      0,
+      0
+    ],
+    "products._id.keyword": [
+      "sold_product_566986_11438",
+      "sold_product_566986_5014"
+    ],
+    "day_of_week_i": [
+      1
+    ],
+    "total_quantity": [
+      2
+    ],
+    "taxless_total_price": [
+      108
+    ],
+    "total_unique_products": [
+      2
+    ],
+    "geoip.continent_name": [
+      "Europe"
+    ],
+    "sku": [
+      "ZO0360903609",
+      "ZO0030100301"
+    ],
+    "customer_full_name.keyword": [
+      "Wilhemina St. Padilla"
+    ],
+    "category.keyword": [
+      "Women's Shoes"
+    ],
+    "products.taxless_price": [
+      75,
+      33
+    ],
+    "products.quantity": [
+      1,
+      1
+    ],
+    "products.price": [
+      75,
+      33
+    ],
+    "customer_first_name": [
+      "Wilhemina St."
+    ],
+    "customer_phone": [
+      ""
+    ],
+    "customer_full_name": [
+      "Wilhemina St. Padilla"
+    ],
+    "geoip.country_iso_code": [
+      "MC"
+    ],
+    "order_id": [
+      "566986"
+    ],
+    "products._id": [
+      "sold_product_566986_11438",
+      "sold_product_566986_5014"
+    ],
+    "products.product_name.keyword": [
+      "High heeled sandals - Midnight Blue",
+      "Boots - cognac"
+    ],
+    "products.product_id": [
+      11438,
+      5014
+    ],
+    "products.category": [
+      "Women's Shoes",
+      "Women's Shoes"
+    ],
+    "products.manufacturer.keyword": [
+      "Primemaster",
+      "Tigress Enterprises"
+    ],
+    "manufacturer": [
+      "Primemaster",
+      "Tigress Enterprises"
+    ],
+    "products.unit_discount_amount": [
+      0,
+      0
+    ],
+    "customer_last_name": [
+      "Padilla"
+    ],
+    "geoip.location": [
+      {
+        "coordinates": [
+          7.4,
+          43.7
+        ],
+        "type": "Point"
+      }
+    ],
+    "products.tax_amount": [
+      0,
+      0
+    ],
+    "products.product_name": [
+      "High heeled sandals - Midnight Blue",
+      "Boots - cognac"
+    ],
+    "products.min_price": [
+      39.75,
+      15.1796875
+    ],
+    "manufacturer.keyword": [
+      "Primemaster",
+      "Tigress Enterprises"
+    ],
+    "products.taxful_price": [
+      75,
+      33
+    ],
+    "currency": [
+      "EUR"
+    ],
+    "products.base_price": [
+      75,
+      33
+    ],
+    "email": [
+      "wilhemina st.@padilla-family.zzz"
+    ],
+    "day_of_week": [
+      "Tuesday"
+    ],
+    "products.sku": [
+      "ZO0360903609",
+      "ZO0030100301"
+    ],
+    "customer_last_name.keyword": [
+      "Padilla"
+    ],
+    "products.category.keyword": [
+      "Women's Shoes",
+      "Women's Shoes"
+    ],
+    "geoip.city_name": [
+      "Monte Carlo"
+    ],
+    "customer_first_name.keyword": [
+      "Wilhemina St."
+    ],
+    "order_date": [
+      "2021-11-02T05:34:05.000Z"
+    ],
+    "products.created_on": [
+      "2016-12-13T05:34:05.000Z",
+      "2016-12-13T05:34:05.000Z"
+    ],
+    "category": [
+      "Women's Shoes"
+    ],
+    "customer_id": [
+      "17"
+    ],
+    "user": [
+      "wilhemina"
+    ],
+    "customer_gender": [
+      "FEMALE"
+    ],
+    "event.dataset": [
+      "sample_ecommerce"
+    ],
+    "taxful_total_price": [
+      108
+    ]
+  }
+}
